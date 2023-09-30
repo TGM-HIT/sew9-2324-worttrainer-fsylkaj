@@ -28,7 +28,7 @@ public class WorttrainerPanel extends JPanel {
         //Eingabe-Bereich
         JPanel input = new JPanel();
         input.setLayout(new GridLayout(2, 1, 5, 5));
-        JLabel t = new JLabel(" Welches Wort wird unten dargestellt (Eingabe zum Überprüfen)?  ");
+        JLabel t = new JLabel(" Welches Wort wird unten dargestellt (Eingabe zum \u00dcberpr\u00fcfen)?  ");
         input.add(t);
         textfeld = new JTextField();
         textfeld.addActionListener(wc);
@@ -51,10 +51,10 @@ public class WorttrainerPanel extends JPanel {
         //Menu
         JPanel menu = new JPanel();
         menu.setLayout(new GridLayout(2, 3, 5, 5));
-        buttonZurueck = new JButton("Zurücksetzten");
-        buttonAdd = new JButton("Wort hinzufügen");
-        JLabel t2 = new JLabel("Richtige Wörter: ");
-        JLabel t3 = new JLabel("Anzahl Wörter: ");
+        buttonZurueck = new JButton("Zur\u00fccksetzten");
+        buttonAdd = new JButton("Wort hinzuf\u00fcgen");
+        JLabel t2 = new JLabel("Richtige W\u00f6rter: ");
+        JLabel t3 = new JLabel("Anzahl W\u00f6rter: ");
         richtigeWoerter = new JLabel("0", SwingConstants.CENTER);
         anzahlWoerter = new JLabel("0", SwingConstants.CENTER);
         menu.add(t2);
