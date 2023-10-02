@@ -14,13 +14,13 @@ public class WorttrainerPanel extends JPanel {
      * @version 2021-30-12
      */
     private JTextField textfeld;
-    private JButton buttonZurueck;
-    private JButton buttonAdd;
+
     private JLabel lImage;
     private JLabel richtigeWoerter;
+    private JLabel falscheWoerter;
     private JLabel anzahlWoerter;
 
-    private String urlText;
+    private String url;
 
     public WorttrainerPanel(WorttrainerController wc) {
         this.setLayout(new BorderLayout());
@@ -49,20 +49,21 @@ public class WorttrainerPanel extends JPanel {
         this.add(lImage, BorderLayout.CENTER);
 
         //Menu
+
         JPanel menu = new JPanel();
-        menu.setLayout(new GridLayout(2, 3, 5, 5));
-        buttonZurueck = new JButton("Zur\u00fccksetzten");
-        buttonAdd = new JButton("Wort hinzuf\u00fcgen");
+        menu.setLayout(new GridLayout(3, 2, 5, 5));
         JLabel t2 = new JLabel("Richtige W\u00f6rter: ");
-        JLabel t3 = new JLabel("Anzahl W\u00f6rter: ");
+        JLabel t3 = new JLabel("Falsche W\u00f6rter: ");
+        JLabel t4= new JLabel ("Ingesamt ge\u00fcbt:");
         richtigeWoerter = new JLabel("0", SwingConstants.CENTER);
         anzahlWoerter = new JLabel("0", SwingConstants.CENTER);
+        falscheWoerter= new JLabel("0",SwingConstants.CENTER );
         menu.add(t2);
         menu.add(richtigeWoerter);
-        menu.add(buttonZurueck);
         menu.add(t3);
+        menu.add(falscheWoerter);
+        menu.add(t4);
         menu.add(anzahlWoerter);
-        menu.add(buttonAdd);
         this.add(menu, BorderLayout.PAGE_END);
     }
 
