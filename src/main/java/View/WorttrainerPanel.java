@@ -20,7 +20,7 @@ public class WorttrainerPanel extends JPanel {
     private JLabel falscheWoerter;
     private JLabel anzahlWoerter;
 
-    private String url;
+    private String url="https://www.zooroyal.at/magazin/wp-content/uploads/2019/10/hund-im-herbst.jpg";
 
     public WorttrainerPanel(WorttrainerController wc) {
         this.setLayout(new BorderLayout());
@@ -37,16 +37,7 @@ public class WorttrainerPanel extends JPanel {
         this.add(input, BorderLayout.PAGE_START);
 
         //Bild-Bereich
-        ImageIcon icon = null;
-        try {
-            icon = new ImageIcon(new URL("https://www.pinclipart.com/picdir/middle/20-206356_wenn-hund-clipart.png"));
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        Image image = icon.getImage(); // umwandeln in ein Image-Objekt
-        image = image.getScaledInstance(250, 250, Image.SCALE_SMOOTH); // skalieren auf gewünschte Größe
-        lImage = new JLabel(new ImageIcon(image)); // anzeigen in einem JLabel
-        this.add(lImage, BorderLayout.CENTER);
+        this.drawImage();
 
         //Menu
 
@@ -66,6 +57,65 @@ public class WorttrainerPanel extends JPanel {
         menu.add(anzahlWoerter);
         this.add(menu, BorderLayout.PAGE_END);
     }
+    /**
+     * Setzt die URL
+     */
+    public void setUrl(String url) {
+        this.url=url;
+        this.drawImage(); //Wenn sich die URL geändert hat, Bild neu anzeigen
+    }
 
+    /**
+     * Zeichnet das Bild mit der entsprechenden URL
+     */
+    public void drawImage() {
+        // Entferne das aktuelle Bild, falls vorhanden
+        if (lImage != null) {
+            this.remove(lImage);
+        }
+
+        ImageIcon icon = null;
+        try {
+            icon = new ImageIcon(new URL(this.url));
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        Image image = icon.getImage(); // umwandeln in ein Image-Objekt
+        image = image.getScaledInstance(250, 250, Image.SCALE_SMOOTH); // skalieren auf gewünschte Größe
+        lImage = new JLabel(new ImageIcon(image)); // anzeigen in einem JLabel
+        this.add(lImage, BorderLayout.CENTER);
+        revalidate(); // Aktualisiere das Panel, um die Änderungen zu übernehmen
+        repaint(); // Erzwinge eine erneute Zeichnung des Panels
+    }
+
+    /**
+     * Gibt den Text aus dem Eingabefeld zurück
+     * @return Input des Users
+     */
+    public String getInpuText() {
+        return this.textfeld.getText();
+    }
+
+    /**
+     * Setzt den Text für die Anzeige der richtigen Wörter
+     * @param text
+     */
+    public void setTextRichtigeWoerter(String text) {
+        this.richtigeWoerter.setText(text);
+    }
+    /**
+     * Setzt den Text für die Anzeige der falschen Wörter
+     * @param text Der anzuzeigende Text
+     */
+    public void setTextFalscheWoerter(String text) {
+        this.falscheWoerter.setText(text);
+    }
+
+    /**
+     * Setzt den Text für die Anzahl der gesamten Wörter
+     */
+    public void setTextGesamt(String text) {
+        this.anzahlWoerter.setText(text);
+    }
 }
 

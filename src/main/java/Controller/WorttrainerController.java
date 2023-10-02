@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Wortpaar;
 import Model.Worttrainer;
 import View.WorttrainerFrame;
 import View.WorttrainerPanel;
@@ -26,13 +27,21 @@ public class WorttrainerController implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        this.wModel.setEingabeAktuell(this.wPanel.getInpuText());
+        this.wModel.pruefeEingabe(wModel.getWortpaar(0));
+        this.wPanel.setTextRichtigeWoerter(wModel.getRichtigeWorte()+"");
+        this.wPanel.setTextFalscheWoerter(wModel.getFalscheWorte()+"");
+        this.wPanel.setTextGesamt(wModel.getRichtigeWorte()+"");
     }
 
     /**
      * Start-Punkt des Worttrainer-Programms
      */
     public static void main (String[] args) {
-        new WorttrainerController();
+        WorttrainerController trainer= new WorttrainerController();
+        System.out.println("Test");
+        Wortpaar wp= new Wortpaar("Apfel", "https://media.istockphoto.com/id/184276818/de/foto/roter-apfel.jpg?s=612x612&w=0&k=20&c=HhxNnyYG6mUOA5bJUlDaoznzdIEtiJzQ5H73mG0ZAeU=");
+        trainer.wModel.addWortpaar(wp);
+        trainer.wPanel.setUrl(wp.getUrl());
     }
 }

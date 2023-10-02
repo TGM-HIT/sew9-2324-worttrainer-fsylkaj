@@ -36,16 +36,16 @@ public class Worttrainer {
      * Gibt das Wortpaar an der jeweiligen Stelle zurück
      * @param i index des Wortpaares
      */
-    public void getWortpaar(int i) {
+    public Wortpaar getWortpaar(int i) {
         if(i<= wortpaare.size()-1) {
-            this.wortpaare.get(i);
+            return this.wortpaare.get(i);
         } else {
             throw new IllegalArgumentException("Ungültiger Index");
         }
     }
 
     /**
-     * Prüft ob die Eingabe mit dem Wort des Woortpaares übereinstimmt. Wenn dies der Fall ist wird
+     * Prüft ob die Eingabe mit dem Wort des aktuellen Woortpaares übereinstimmt. Wenn dies der Fall ist wird
      * die Statistik angepasst, dass heißt ein Punkt zur Anzahl der richtigen Wörter addiert. Wenn dies
      * nicht der Fall ist, wird ein Punkt zur Anzahl der falschen Wörter addiert.
      * @param wortpaarAktuell Das aktuelle ausgewählte Wortpaar
