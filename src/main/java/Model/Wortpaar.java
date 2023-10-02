@@ -84,11 +84,8 @@ public class Wortpaar  {
 
             // Überprüfe, ob die URL syntaktisch korrekt ist
             url.toURI();
-
-            // Wenn die URL syntaktisch korrekt ist, wird true zurückgegeben
             return true;
         } catch (Exception e) {
-            // Wenn eine Ausnahme auftritt, ist die URL ungültig
             return false;
         }
     }
