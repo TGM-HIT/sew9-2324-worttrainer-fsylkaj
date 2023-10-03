@@ -13,6 +13,8 @@ public class Worttrainer {
     private int richtigeWorte;
     private int falscheWorte;
     private String eingabeAktuell;
+
+    private int indexWortpaarAktuell=0;
     /**
      * Konstruktor, der die Liste für die Wortpaare im Worttrainer initialisiert
      */
@@ -45,6 +47,30 @@ public class Worttrainer {
     }
 
     /**
+     * Gibt den Index des Wortpaares, das gerade gewählt ist zurpück
+     * @return der aktuelle Index des Wortpaares
+     */
+    public int getIndexAktuell(){
+        return this.indexWortpaarAktuell;
+    }
+
+    /**
+     * Gibt das aktuell gewählte Wortpaar zurück
+     * @return Das aktuell gewählte Wortpaar
+     */
+    public Wortpaar getWortpaarAktuell() {
+        return getWortpaar(indexWortpaarAktuell);
+    }
+    /**
+     * Gibt die Anzahl der zu übenden Wörter zurück
+     * @return Länge der Liste der gespeicherten Wortpaare
+     */
+    public int getAnzahlWortpaare() {
+        return this.wortpaare.size();
+    }
+
+
+    /**
      * Prüft ob die Eingabe mit dem Wort des aktuellen Woortpaares übereinstimmt. Wenn dies der Fall ist wird
      * die Statistik angepasst, dass heißt ein Punkt zur Anzahl der richtigen Wörter addiert. Wenn dies
      * nicht der Fall ist, wird ein Punkt zur Anzahl der falschen Wörter addiert.
@@ -54,6 +80,8 @@ public class Worttrainer {
     public boolean pruefeEingabe(Wortpaar wortpaarAktuell) {
         if(this.eingabeAktuell.equals(wortpaarAktuell.getWord())){
             this.richtigeWorte++;
+            //Die Antwort ist richtig, d.h das nächste Wortpaar kommt an die Reihe
+            this.indexWortpaarAktuell++;
             return true;
         } else {
             this.falscheWorte++;
@@ -69,6 +97,10 @@ public class Worttrainer {
         return this.richtigeWorte + this.falscheWorte;
     }
 
+    /**
+     * Gibt den Index jenes Wortpaares aus der Liste an, welches gerade ausgewählt ist
+     * @return
+     */
     public int getRichtigeWorte() {
         return richtigeWorte;
     }

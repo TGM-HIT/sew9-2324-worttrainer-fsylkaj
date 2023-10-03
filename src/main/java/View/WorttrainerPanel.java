@@ -117,5 +117,93 @@ public class WorttrainerPanel extends JPanel {
     public void setTextGesamt(String text) {
         this.anzahlWoerter.setText(text);
     }
+
+    /**
+     * Zeigt eine Nachricht an, in der steht, dass die Antwort richtig ist.
+     */
+    public void zeigeRichtigMeldung() {
+        try {
+            URL imageUrl = new URL("https://images.freeimages.com/clg/images/38/383687/green-checkmark-clip-art_f.jpg");
+
+            ImageIcon icon = new ImageIcon(imageUrl);
+
+            Image scaledImage = icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Die Antwort ist richtig! Bravo!",
+                    "Richtige Antwort",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    scaledIcon
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Zeigt eine Nachricht an, in der steht, dass die Antwort falsch ist und bittet den
+     * User das Wort erneut zu erraten
+     */
+    public void zeigeFehlermeldung() {
+        try {
+            URL imageUrl = new URL("https://cdn.pixabay.com/photo/2012/04/13/00/14/cross-31176_1280.png");
+
+            ImageIcon icon = new ImageIcon(imageUrl);
+
+            Image scaledImage = icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Die Antwort ist falsch! Bitte versuche es noch ein Mal!",
+                    "Falsche Antwort",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    scaledIcon
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * Leert den Inhalt im Textfeld
+     */
+    public void resetInput() {
+        this.textfeld.setText("");
+    }
+    /**
+     * Aktiviert oder deaktiviert das Eingabefeld
+     * @param v true zum Aktivieren, false zum Deaktivieren
+     */
+    public void inputEnable(boolean v) {
+        this.textfeld.setEnabled(v);
+    }
+
+    /**
+     * Zeigt eine Meldung an, in der mittgeteilt wird, das die Trainingseinheit beendet ist
+     */
+    public void zeigeEndmeldung() {
+        try {
+            URL imageUrl = new URL("https://icon-library.com/images/end-icon/end-icon-2.jpg");
+
+            ImageIcon icon = new ImageIcon(imageUrl);
+
+            Image scaledImage = icon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+
+            ImageIcon scaledIcon = new ImageIcon(scaledImage);
+
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Du bist am Ende der \u00dcbungseinheit angelangt! Bravo!",
+                    "Ende",
+                    JOptionPane.INFORMATION_MESSAGE,
+                    scaledIcon
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
 
