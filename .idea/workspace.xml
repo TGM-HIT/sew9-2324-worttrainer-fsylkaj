@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="af2826a4-01ea-4345-8263-44d0e0b8154b" name="Changes" comment="1. Entwurf des UML-Diagramms für den Wortrainer">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controller/WorttrainerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Worttrainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/WorttrainerFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/View/WorttrainerPanel.java" afterDir="false" />
+    <list default="true" id="af2826a4-01ea-4345-8263-44d0e0b8154b" name="Changes" comment="UML Design Erweiterung - Persistenz abgeschlossen">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Persistenz/Speicher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Persistenz/WorttrainerSpeicher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/UML_Worttrainer_V1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/WorttrainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/WorttrainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Worttrainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Worttrainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/WorttrainerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/WorttrainerPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,9 +23,41 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GK_9a.1_Worttrainer_reloaded" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GK_9a.1_Worttrainer_reloaded" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="GK_9a.1_Worttrainer_reloaded" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -40,15 +74,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\flori\OneDrive - tgm - Die Schule der Technik\SEW_S09\GK_9a.1_Worttrainer_reloaded\UML" />
@@ -64,7 +98,11 @@
       <option name="presentableId" value="Default" />
       <updated>1695214823287</updated>
       <workItem from="1695214827474" duration="3471000" />
-      <workItem from="1696098030372" duration="6233000" />
+      <workItem from="1696098030372" duration="7003000" />
+      <workItem from="1696198587324" duration="3119000" />
+      <workItem from="1696276921402" duration="12411000" />
+      <workItem from="1696362563687" duration="6446000" />
+      <workItem from="1696414757114" duration="14335000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1695215855520</created>
@@ -80,7 +118,84 @@
       <option name="project" value="LOCAL" />
       <updated>1696107215287</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Erstellung der GUI fertiggestellt">
+      <created>1696111421680</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696111421680</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Erstellung der GUI fertiggestellt">
+      <created>1696112073713</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696112073713</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Model - Klasse Wortpaar implementiert">
+      <created>1696201703082</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696201703082</updated>
+    </task>
+    <task id="LOCAL-00006" summary="UML Version 2_ Entwurfserweiterung des Models und Anpassungen an den GUI-Komponenten">
+      <created>1696280471038</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696280471038</updated>
+    </task>
+    <task id="LOCAL-00007" summary="UML Version 2_ Entwurfserweiterung des Models und Anpassungen an den GUI-Komponenten">
+      <created>1696280487244</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696280487244</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Model - Worttrainer implementiert">
+      <created>1696284798522</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696284798522</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Model - Wortpaar Anpassungen">
+      <created>1696284817985</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696284817985</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Anpassungen im Panel (Code und UML) sowie Testungen in der WorttrainerController Klasse">
+      <created>1696289937198</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696289937198</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Testen des Worttrainers im WorttrainerController und Ergänzen von Methoden in Worttrainer und WorttrainerPanel">
+      <created>1696369237115</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696369237115</updated>
+    </task>
+    <task id="LOCAL-00012" summary="UML Erweiterung: Persistierung veranschaulicht und Methoden ergänzt">
+      <created>1696416372586</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696416372586</updated>
+    </task>
+    <task id="LOCAL-00013" summary="UML Design Erweiterung - Persistenz abgeschlossen">
+      <created>1696428212294</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696428212294</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +215,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="1. Entwurf des UML-Diagramms für den Wortrainer" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Entwurf des UML-Diagramms für den Wortrainer" />
+    <MESSAGE value="Erstellung der GUI fertiggestellt" />
+    <MESSAGE value="Model - Klasse Wortpaar implementiert" />
+    <MESSAGE value="GUI - Anpassungen, Erstellung der Klasse WorttrainController, der die GUI verwaltet" />
+    <MESSAGE value="UML Version 2_ Entwurfserweiterung des Models und Anpassungen an den GUI-Komponenten" />
+    <MESSAGE value="Model - Worttrainer Klasse implementiert" />
+    <MESSAGE value="Model - Worttrainer implementiert" />
+    <MESSAGE value="Model - Wortpaar Anpassungen" />
+    <MESSAGE value="Anpassungen im Panel (Code und UML) sowie Testungen in der WorttrainerController Klasse" />
+    <MESSAGE value="Testen des Worttrainers im WorttrainerController und Ergänzen von Methoden in Worttrainer und WorttrainerPanel" />
+    <MESSAGE value="UML Erweiterung: Persistierung veranschaulicht und Methoden ergänzt" />
+    <MESSAGE value="UML Design Erweiterung - Persistenz abgeschlossen" />
+    <option name="LAST_COMMIT_MESSAGE" value="UML Design Erweiterung - Persistenz abgeschlossen" />
   </component>
 </project>

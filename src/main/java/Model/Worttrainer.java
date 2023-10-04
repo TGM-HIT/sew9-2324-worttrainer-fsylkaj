@@ -2,6 +2,7 @@ package Model;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Repräsentiert die Logik des Worttrainer-Programms
@@ -13,7 +14,6 @@ public class Worttrainer {
     private int richtigeWorte;
     private int falscheWorte;
     private String eingabeAktuell;
-
     private int indexWortpaarAktuell=0;
     /**
      * Konstruktor, der die Liste für die Wortpaare im Worttrainer initialisiert
@@ -69,6 +69,19 @@ public class Worttrainer {
         return this.wortpaare.size();
     }
 
+    /**
+     * Liefert ein zufälliges Wortpaar aus der Liste an Wortpaaren
+     * @return ein Wortpaar aus der Liste
+     */
+    public Wortpaar getRandomWortpaar() {
+        Random rand = new Random();
+
+        int min = 0;
+        int max = this.wortpaare.size()-1;
+        int randomNum = rand.nextInt((max - min) + 1) + min;
+        this.indexWortpaarAktuell=randomNum;
+        return this.wortpaare.get(randomNum);
+    }
 
     /**
      * Prüft ob die Eingabe mit dem Wort des aktuellen Woortpaares übereinstimmt. Wenn dies der Fall ist wird
@@ -80,15 +93,19 @@ public class Worttrainer {
     public boolean pruefeEingabe(Wortpaar wortpaarAktuell) {
         if(this.eingabeAktuell.equals(wortpaarAktuell.getWord())){
             this.richtigeWorte++;
-            //Die Antwort ist richtig, d.h das nächste Wortpaar kommt an die Reihe
-            this.indexWortpaarAktuell++;
             return true;
         } else {
             this.falscheWorte++;
             return false;
         }
     }
-
+    /**
+     * Gibt die Liste an Wortpaaren zurück
+     * @return die Liste an Wortpaaren
+     */
+    public List<Wortpaar> getWortpaarList() {
+        return this.wortpaare;
+    }
     /**
      * Gibt die gesamte Anzahl an angeübten Wortpaaren zurück
      * @return die Anzahl der richtigen und falschen Wörter gesamt
@@ -99,7 +116,7 @@ public class Worttrainer {
 
     /**
      * Gibt den Index jenes Wortpaares aus der Liste an, welches gerade ausgewählt ist
-     * @return
+     * @return die Anzahl der richtig geschriebenen Wörter
      */
     public int getRichtigeWorte() {
         return richtigeWorte;

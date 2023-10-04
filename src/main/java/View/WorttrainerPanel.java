@@ -20,6 +20,7 @@ public class WorttrainerPanel extends JPanel {
     private JLabel falscheWoerter;
     private JLabel anzahlWoerter;
 
+    private JButton endButton;
     private String url="https://www.zooroyal.at/magazin/wp-content/uploads/2019/10/hund-im-herbst.jpg";
 
     public WorttrainerPanel(WorttrainerController wc) {
@@ -31,6 +32,7 @@ public class WorttrainerPanel extends JPanel {
         JLabel t = new JLabel(" Welches Wort wird unten dargestellt (Eingabe zum \u00dcberpr\u00fcfen)?  ");
         input.add(t);
         textfeld = new JTextField();
+        textfeld.setActionCommand("eingabe");
         textfeld.addActionListener(wc);
         textfeld.setFont(new Font("", Font.PLAIN, 20));
         input.add(textfeld);
@@ -42,20 +44,28 @@ public class WorttrainerPanel extends JPanel {
         //Menu
 
         JPanel menu = new JPanel();
-        menu.setLayout(new GridLayout(3, 2, 5, 5));
+        menu.setLayout(new GridLayout(4, 2, 5, 5));
+        JLabel t1= new JLabel("Statistik");
         JLabel t2 = new JLabel("Richtige W\u00f6rter: ");
         JLabel t3 = new JLabel("Falsche W\u00f6rter: ");
         JLabel t4= new JLabel ("Ingesamt ge\u00fcbt:");
         richtigeWoerter = new JLabel("0", SwingConstants.CENTER);
         anzahlWoerter = new JLabel("0", SwingConstants.CENTER);
         falscheWoerter= new JLabel("0",SwingConstants.CENTER );
+        menu.add(t1);
+        endButton=new JButton("Speichern und beenden");
+        endButton.setActionCommand("end");
+        endButton.addActionListener(wc);
+        menu.add(endButton);
         menu.add(t2);
         menu.add(richtigeWoerter);
         menu.add(t3);
         menu.add(falscheWoerter);
         menu.add(t4);
         menu.add(anzahlWoerter);
+
         this.add(menu, BorderLayout.PAGE_END);
+
     }
     /**
      * Setzt die URL
@@ -196,7 +206,7 @@ public class WorttrainerPanel extends JPanel {
 
             JOptionPane.showMessageDialog(
                     null,
-                    "Du bist am Ende der \u00dcbungseinheit angelangt! Bravo!",
+                    "Du bist am Ende der \u00dcbungseinheit angelangt! Bis bald!",
                     "Ende",
                     JOptionPane.INFORMATION_MESSAGE,
                     scaledIcon
@@ -205,5 +215,7 @@ public class WorttrainerPanel extends JPanel {
             e.printStackTrace();
         }
     }
+
+
 }
 
