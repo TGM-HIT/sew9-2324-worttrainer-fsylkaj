@@ -28,6 +28,7 @@ public class WorttrainerController implements ActionListener {
         this.wFrame = new WorttrainerFrame("Worttrainer", this.wPanel);
         this.wSpeicher= new WorttrainerSpeicher(this.wModel);
         this.wModel=wSpeicher.load("Worttrainer.txt");
+        this.wSpeicher= new WorttrainerSpeicher(this.wModel);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -36,6 +37,13 @@ public class WorttrainerController implements ActionListener {
             this.wPanel.inputEnable(false);
             this.wPanel.zeigeEndmeldung();
             this.wSpeicher.save("Worttrainer.txt");
+        }
+        if(e.getActionCommand().equals("reset")){
+            this.wModel.setRichtigeWorte(0);
+            this.wModel.setFalscheWorte(0);
+            this.wPanel.setTextFalscheWoerter("0");
+            this.wPanel.setTextRichtigeWoerter("0");
+            this.wPanel.setTextGesamt("0");
         }
         if(e.getActionCommand().equals("eingabe")) {
             if (this.wModel.pruefeEingabe(wModel.getWortpaar(wModel.getIndexAktuell()))) {
@@ -59,8 +67,8 @@ public class WorttrainerController implements ActionListener {
      */
     public static void main (String[] args) {
         WorttrainerController trainer = new WorttrainerController();
-        trainer.wPanel.setUrl(trainer.wModel.getRandomWortpaar().getUrl());//Zu Beginn soll standardmäßig eine URL gesetzt werden
-        trainer.wPanel.setTextRichtigeWoerter(trainer.wModel.getRichtigeWorte()+"");
+        trainer.wPanel.setUrl(trainer.wModel.getRandomWortpaar().getUrl());//Zu Beginn soll standardmäßig eine URL gesetzt
+        trainer.wPanel.setTextRichtigeWoerter(trainer.wModel.getRichtigeWorte()+""); //Zu Beginn soll die Statistik geladen werden
         trainer.wPanel.setTextFalscheWoerter(trainer.wModel.getFalscheWorte()+"");
         trainer.wPanel.setTextGesamt(trainer.wModel.getGesamtstand()+"");
     }

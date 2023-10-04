@@ -21,7 +21,8 @@ public class WorttrainerPanel extends JPanel {
     private JLabel anzahlWoerter;
 
     private JButton endButton;
-    private String url="https://www.zooroyal.at/magazin/wp-content/uploads/2019/10/hund-im-herbst.jpg";
+    private JButton resetButton;
+    private String url="https://media.istockphoto.com/id/1335247217/vector/loading-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=jARr4Alv-d5U3bCa8eixuX2593e1rDiiWnvJLgHCkQM=";
 
     public WorttrainerPanel(WorttrainerController wc) {
         this.setLayout(new BorderLayout());
@@ -44,7 +45,7 @@ public class WorttrainerPanel extends JPanel {
         //Menu
 
         JPanel menu = new JPanel();
-        menu.setLayout(new GridLayout(4, 2, 5, 5));
+        menu.setLayout(new GridLayout(5, 2, 5, 5));
         JLabel t1= new JLabel("Statistik");
         JLabel t2 = new JLabel("Richtige W\u00f6rter: ");
         JLabel t3 = new JLabel("Falsche W\u00f6rter: ");
@@ -56,14 +57,18 @@ public class WorttrainerPanel extends JPanel {
         endButton=new JButton("Speichern und beenden");
         endButton.setActionCommand("end");
         endButton.addActionListener(wc);
-        menu.add(endButton);
+        menu.add(new JLabel(""));
         menu.add(t2);
         menu.add(richtigeWoerter);
         menu.add(t3);
         menu.add(falscheWoerter);
         menu.add(t4);
         menu.add(anzahlWoerter);
-
+        resetButton= new JButton("Zur\u00fccksetzen");
+        resetButton.setActionCommand("reset");
+        resetButton.addActionListener(wc);
+        menu.add(resetButton);
+        menu.add(endButton);
         this.add(menu, BorderLayout.PAGE_END);
 
     }
