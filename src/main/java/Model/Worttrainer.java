@@ -46,6 +46,13 @@ public class Worttrainer {
         }
     }
 
+    /**
+     * Gibt den Index des Wortpaares, das gerade gewählt ist zurpück
+     * @return der aktuelle Index des Wortpaares
+     */
+    public int getIndexAktuell(){
+        return this.indexWortpaarAktuell;
+    }
 
     /**
      * Gibt das aktuell gewählte Wortpaar zurück
