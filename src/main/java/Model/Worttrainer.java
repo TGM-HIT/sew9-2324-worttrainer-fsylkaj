@@ -139,6 +139,12 @@ public class Worttrainer {
     }
 
     public void setEingabeAktuell(String eingabeAktuell) {
-        this.eingabeAktuell = eingabeAktuell;
+        if(eingabeAktuell!=null) {
+            this.eingabeAktuell=eingabeAktuell;
+        } else {
+            throw new IllegalArgumentException("Eingabe darf nicht null sein");
+        }
     }
+
+
 }
