@@ -220,7 +220,21 @@ public class WorttrainerPanel extends JPanel {
             e.printStackTrace();
         }
     }
+    /**
+     * Aktiviert oder deaktiviert den Zurücksetzen Button
+     * @param v der Status true oder false
+     */
+    public void enableButtonZuruecksetzen(boolean v) {
+        this.resetButton.setEnabled(v);
+    }
 
+    /**
+     * Aktiviert oder deaktiviert den Beenden & Speichern Button
+     * @param v der Status true oder false
+     */
+    public void enableButtonEnd (boolean v) {
+        this.endButton.setEnabled(v);
+    }
 
 }
 

@@ -18,7 +18,6 @@ public class WorttrainerSpeicher implements Speicher {
 
     /**
      * Initialisiert den Speicher mit einem Worttrainer
-     *
      * @param trainer der zu speicherende Worttrainer
      */
     public WorttrainerSpeicher(Worttrainer trainer) {
@@ -28,6 +27,7 @@ public class WorttrainerSpeicher implements Speicher {
     /**
      * Speichert den aktuellen Zustand des Worttrainers, dazu zählen
      * die Wortpaare sowie die Statistik
+     * @param filename Der Pfad des Files als Text
      */
     @Override
     public void save(String filename) {
@@ -55,7 +55,7 @@ public class WorttrainerSpeicher implements Speicher {
     /**
      * Lädt den Worttrainer aus dem Speicher und gibt den Zustand des Worttrainers
      * zurück.
-     *
+     * @param filename Der Pfad des Files als Text
      * @return Der geladene Worttrainer
      */
     @Override

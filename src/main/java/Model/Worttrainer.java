@@ -115,29 +115,49 @@ public class Worttrainer {
     }
 
     /**
-     * Gibt den Index jenes Wortpaares aus der Liste an, welches gerade ausgewählt ist
-     * @return die Anzahl der richtig geschriebenen Wörter
+     * Gibt die Anzahl der richtig geschriebenen Wörter zurück
+     * @return Anzahl der richtigen Wörter
      */
     public int getRichtigeWorte() {
         return richtigeWorte;
     }
 
+    /**
+     * Setzt die Anzahl der richtig geschriebenen Wörter zurück
+     * @param richtigeWorte Anzahl der richtigen Wörter
+     */
     public void setRichtigeWorte(int richtigeWorte) {
         this.richtigeWorte = richtigeWorte;
     }
 
+    /**
+     * Gibt die Anzahl der falsch geschriebene Wörter zurück
+     * @return Anzahl der falschen Wörter
+     */
     public int getFalscheWorte() {
         return falscheWorte;
     }
 
+    /**
+     * Setzt die Anzahl der falsch geschriebenen Wörter
+     * @param falscheWorte Anzahl der falschen Wörter
+     */
     public void setFalscheWorte(int falscheWorte) {
         this.falscheWorte = falscheWorte;
     }
 
+    /**
+     * Gibt die aktuelle Eingabe zurück
+     * @return aktuelle Eingabe des Users
+     */
     public String getEingabeAktuell() {
         return eingabeAktuell;
     }
 
+    /**
+     * Setzt die aktuelle Eingabe des Users
+     * @param eingabeAktuell aktuelle Eingabe
+     */
     public void setEingabeAktuell(String eingabeAktuell) {
         if(eingabeAktuell!=null) {
             this.eingabeAktuell=eingabeAktuell;

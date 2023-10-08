@@ -35,6 +35,8 @@ public class WorttrainerController implements ActionListener {
         this.wModel.setEingabeAktuell(this.wPanel.getInpuText());
         if(e.getActionCommand().equals("end")) {
             this.wPanel.inputEnable(false);
+            this.wPanel.enableButtonZuruecksetzen(false);
+            this.wPanel.enableButtonEnd(false);
             this.wPanel.zeigeEndmeldung();
             this.wSpeicher.save("Worttrainer.txt");
         }
