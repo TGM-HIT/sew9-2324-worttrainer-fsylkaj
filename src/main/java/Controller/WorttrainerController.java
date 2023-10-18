@@ -27,9 +27,9 @@ public class WorttrainerController implements ActionListener {
     public WorttrainerController() {
         this.wPanel = new WorttrainerPanel(this);
         this.wFrame = new WorttrainerFrame("Worttrainer", this.wPanel);
-        this.wSpeicher= new WorttrainerSpeicher(this.wModel);
+        this.wSpeicher= new WorttrainerSpeicher();
         this.wModel=wSpeicher.load("Worttrainer.txt");
-        this.wSpeicher= new WorttrainerSpeicher(this.wModel);
+        this.wSpeicher= new WorttrainerSpeicher();
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -39,7 +39,7 @@ public class WorttrainerController implements ActionListener {
             this.wPanel.enableButtonZuruecksetzen(false);
             this.wPanel.enableButtonEnd(false);
             this.wPanel.zeigeEndmeldung();
-            this.wSpeicher.save("Worttrainer.txt");
+            this.wSpeicher.save("Worttrainer.txt", this.wModel);
         }
         if(e.getActionCommand().equals("reset")){
             this.wModel.setRichtigeWorte(0);
