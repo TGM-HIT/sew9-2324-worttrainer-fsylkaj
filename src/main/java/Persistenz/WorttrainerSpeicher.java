@@ -14,23 +14,13 @@ import java.util.Scanner;
  * @version 2023-10-04
  */
 public class WorttrainerSpeicher implements Speicher {
-    private Worttrainer trainer;
-
-    /**
-     * Initialisiert den Speicher mit einem Worttrainer
-     * @param trainer der zu speicherende Worttrainer
-     */
-    public WorttrainerSpeicher(Worttrainer trainer) {
-        this.trainer = trainer;
-    }
-
     /**
      * Speichert den aktuellen Zustand des Worttrainers, dazu zählen
      * die Wortpaare sowie die Statistik
      * @param filename Der Pfad des Files als Text
      */
     @Override
-    public void save(String filename) {
+    public void save(String filename, Worttrainer trainer) {
         File f = new File(filename);
         PrintWriter outputstream = null;
         try {

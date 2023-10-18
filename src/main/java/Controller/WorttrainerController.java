@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Wortpaar;
 import Model.Worttrainer;
+import Persistenz.Speicher;
 import Persistenz.WorttrainerSpeicher;
 import View.WorttrainerFrame;
 import View.WorttrainerPanel;
@@ -19,7 +20,7 @@ public class WorttrainerController implements ActionListener {
     private WorttrainerPanel wPanel;
     private Worttrainer wModel;
 
-    private WorttrainerSpeicher wSpeicher;
+    private Speicher wSpeicher;
     /**
      * Initialisiert die View-Elemente sowie das Model
      */

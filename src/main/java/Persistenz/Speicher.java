@@ -8,6 +8,6 @@ import Model.Worttrainer;
  * @veriosn 2023-10-04
  */
 public interface Speicher {
-    public void save(String filename);
+    public void save(String filename, Worttrainer t);
     public Worttrainer load(String filename);
 }
