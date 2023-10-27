@@ -1,8 +1,13 @@
 package Model;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLConnection;
 
 /**
  * Repräsentiert ein Wortpaar. Dabei wird einem Wort der URL eines Bildes zugeordnet,
@@ -105,12 +110,17 @@ public class Wortpaar {
 
     }
 
-    boolean isImage(String image_path) {
-        Image image = new ImageIcon(image_path).getImage();
-        if (image.getWidth(null) == -1) {
-            return false;
-        } else {
-            return true;
-        }
+    /**
+     * Hilfsmethode, die überprüft ob sich sich bei der URL wirklich um
+     * eine bilder URL handelt oder nicht.
+     * @param url die jeweilige URL
+     * @return true oder false, je nachdem ob
+     */
+    public static boolean isImage(String url) throws IOException {
+        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+        connection.setRequestMethod("HEAD");
+        connection.connect();
+        String contentType = connection.getContentType();
+        return contentType.startsWith("image/");
     }
 }
