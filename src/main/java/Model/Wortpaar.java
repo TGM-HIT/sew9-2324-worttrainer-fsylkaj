@@ -99,28 +99,35 @@ public class Wortpaar {
             URL url = new URL(urltext);
             // Überprüfe, ob die URL syntaktisch korrekt ist
             url.toURI();
-            if (!isImage(urltext)) {
-                String newURL = JOptionPane.showInputDialog(null, "Diese URL verweist leider auf kein Bild mehr! Bitte eine neue URL eingeben");
-                checkURL(newURL);
-            }
-            return true;
         } catch (Exception e) {
             return false;
         }
-
+        if (!isImage(urltext)) {
+            JOptionPane.showMessageDialog(null, "Die URL fuer das anzuzeigende Bild ist nicht gueltig!!");
+            throw new IllegalArgumentException("Die Bild-URL für das anzuzeigende Bild ist nicht gültig");
+        }
+        return true;
     }
+
 
     /**
      * Hilfsmethode, die überprüft ob sich sich bei der URL wirklich um
-     * eine bilder URL handelt oder nicht.
-     * @param url die jeweilige URL
-     * @return true oder false, je nachdem ob
+     * eine gültige Bilderurl handelt oder nicht
+     * @param imageUrl die jeweilige URL, die zu überprüfen ist
+     * @return true wenn imageURL gültig ist, false im anderen Fall
      */
-    public static boolean isImage(String url) throws IOException {
-        HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
-        connection.setRequestMethod("HEAD");
-        connection.connect();
-        String contentType = connection.getContentType();
-        return contentType.startsWith("image/");
+    public boolean isImage(String imageUrl) {
+        try{
+            ImageIcon imageIcon = new ImageIcon(new URL(imageUrl));
+            while(imageIcon.getImageLoadStatus()==MediaTracker.LOADING){
+                Thread.sleep(500);
+            }
+            if(!(imageIcon.getImageLoadStatus()==MediaTracker.ABORTED || imageIcon.getImageLoadStatus()==MediaTracker.ERRORED)) return true;
+        } catch (MalformedURLException e){
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 }

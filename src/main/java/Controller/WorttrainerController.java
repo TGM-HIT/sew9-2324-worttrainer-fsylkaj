@@ -70,7 +70,7 @@ public class WorttrainerController implements ActionListener {
      */
     public static void main (String[] args) {
         WorttrainerController trainer = new WorttrainerController();
-        trainer.wPanel.setUrl("https://discord.com/login");//Zu Beginn soll standardmäßig eine URL gesetzt
+        trainer.wPanel.setUrl("https://www.google.at/");//Zu Beginn soll standardmäßig eine URL gesetzt
         trainer.wPanel.setTextRichtigeWoerter(trainer.wModel.getRichtigeWorte()+""); //Zu Beginn soll die Statistik geladen werden
         trainer.wPanel.setTextFalscheWoerter(trainer.wModel.getFalscheWorte()+"");
         trainer.wPanel.setTextGesamt(trainer.wModel.getGesamtstand()+"");
