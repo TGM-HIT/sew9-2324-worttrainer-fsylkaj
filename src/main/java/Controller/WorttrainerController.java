@@ -67,6 +67,7 @@ public class WorttrainerController implements ActionListener {
 
     /**
      * Start-Punkt des Worttrainer-Programms
+     * @param args command line argument
      */
     public static void main (String[] args) {
         WorttrainerController trainer = new WorttrainerController();

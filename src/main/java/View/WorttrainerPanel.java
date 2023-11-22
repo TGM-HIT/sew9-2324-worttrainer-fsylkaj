@@ -7,12 +7,12 @@ import java.awt.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Diese Klasse erstellt das Layout für den Worttrainer
+ * @author Florian Sylkaj
+ * @version 2021-30-12
+ */
 public class WorttrainerPanel extends JPanel {
-    /**
-     * Diese Klasse erstellt das Layout für den Worttrainer
-     * @author Florian Sylkaj
-     * @version 2021-30-12
-     */
     private JTextField textfeld;
 
     private JLabel lImage;
@@ -24,6 +24,10 @@ public class WorttrainerPanel extends JPanel {
     private JButton resetButton;
     private String url="https://media.istockphoto.com/id/1335247217/vector/loading-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=jARr4Alv-d5U3bCa8eixuX2593e1rDiiWnvJLgHCkQM=";
 
+    /**
+     * Konstrukutor der die Anezige des Worttrainers bildet
+     * @param wc Der jewilige Controller
+     */
     public WorttrainerPanel(WorttrainerController wc) {
         this.setLayout(new BorderLayout());
 
@@ -74,6 +78,7 @@ public class WorttrainerPanel extends JPanel {
     }
     /**
      * Setzt die URL
+     * @param url Die zu setzende URL
      */
     public void setUrl(String url) {
         this.url=url;
@@ -113,7 +118,7 @@ public class WorttrainerPanel extends JPanel {
 
     /**
      * Setzt den Text für die Anzeige der richtigen Wörter
-     * @param text
+     * @param text Der anzuzeigende Text
      */
     public void setTextRichtigeWoerter(String text) {
         this.richtigeWoerter.setText(text);
@@ -128,6 +133,7 @@ public class WorttrainerPanel extends JPanel {
 
     /**
      * Setzt den Text für die Anzahl der gesamten Wörter
+     * @param text Der anzuzeigende Text
      */
     public void setTextGesamt(String text) {
         this.anzahlWoerter.setText(text);
@@ -229,7 +235,7 @@ public class WorttrainerPanel extends JPanel {
     }
 
     /**
-     * Aktiviert oder deaktiviert den Beenden & Speichern Button
+     * Aktiviert oder deaktiviert den Beenden  Speichern Button
      * @param v der Status true oder false
      */
     public void enableButtonEnd (boolean v) {

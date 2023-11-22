@@ -21,7 +21,6 @@ public class Wortpaar {
 
     /**
      * Erzeugt ein Wortpaar
-     *
      * @param word Das entsprechende Wort
      * @param url  Das entsprechende
      */
@@ -32,7 +31,6 @@ public class Wortpaar {
 
     /**
      * Gibt das Wort zurück
-     *
      * @return das Wort des Wortpaares
      */
     public String getWord() {
@@ -41,8 +39,7 @@ public class Wortpaar {
 
     /**
      * Setzt das wort sofern dieses auch gültig ist
-     *
-     * @param word
+     * @param word das zu setzende Wort
      */
     public void setWord(String word) {
         if (checkWord(word)) {
@@ -54,7 +51,6 @@ public class Wortpaar {
 
     /**
      * Gibt die URL des Bildes für das Wort
-     *
      * @return die URL des Wortpaares
      */
     public String getUrl() {
@@ -63,8 +59,7 @@ public class Wortpaar {
 
     /**
      * Setzt die Url sofern diese auch syntaktisch korrekt ist
-     *
-     * @param url
+     * @param url die jewilige Url
      */
     public void setUrl(String url) {
         if (checkURL(url)) {
@@ -75,8 +70,7 @@ public class Wortpaar {
     }
 
     /**
-     * Prüft die Gültigkeit des Wortes (ungleich null und kein Leerstring)
-     *
+     * Prüft die Gültigkeit des Wortes (ungleich null und kein Leerstring
      * @param word Das zu prüfende Wort
      * @return false, wenn das Wort ungültig ist, true im anderen Fall
      */
@@ -89,7 +83,6 @@ public class Wortpaar {
 
     /**
      * Prüft, ob die URL syntaktisch korrekt ist
-     *
      * @param urltext die zu prüfende url als text
      * @return false, wenn URL ungültig ist, true im anderen Fall
      */
@@ -122,7 +115,8 @@ public class Wortpaar {
             while(imageIcon.getImageLoadStatus()==MediaTracker.LOADING){
                 Thread.sleep(500);
             }
-            if(!(imageIcon.getImageLoadStatus()==MediaTracker.ABORTED || imageIcon.getImageLoadStatus()==MediaTracker.ERRORED)) return true;
+            if(!(imageIcon.getImageLoadStatus()==MediaTracker.ABORTED || imageIcon.getImageLoadStatus()==MediaTracker.ERRORED))
+                return true;
         } catch (MalformedURLException e){
             throw new RuntimeException(e);
         } catch (InterruptedException e) {

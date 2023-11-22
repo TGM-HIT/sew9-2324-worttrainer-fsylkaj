@@ -37,6 +37,7 @@ public class Worttrainer {
     /**
      * Gibt das Wortpaar an der jeweiligen Stelle zurück
      * @param i index des Wortpaares
+     * @return Das jeweilige Wortpaar
      */
     public Wortpaar getWortpaar(int i) {
         if(i<= wortpaare.size()-1) {
